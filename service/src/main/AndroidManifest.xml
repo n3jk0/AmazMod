@@ -147,6 +147,11 @@
             </intent-filter>
         </service>
 
+        <service
+            android:name="com.amazmod.service.ui.Overlay_launcher"
+            android:exported="false">
+        </service>
+
         <service android:name=".support.BatteryJobService"
             android:label="AmazModBatteryJobService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
@@ -169,6 +174,12 @@
             <intent-filter android:priority="1000">
                 <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
             </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name="com.amazmod.service.LauncherStateReceiver"
+            android:enabled="true"
+            android:exported="false">
         </receiver>
 
         <receiver
@@ -205,10 +216,6 @@
                 <action android:name="android.app.action.DEVICE_ADMIN_DISABLED" />
             </intent-filter>
         </receiver>
-
-        <service
-            android:name="com.amazmod.service.ui.overlay_launcher"
-            android:exported="false" />
 
         <!-- Disabled as it does not work anyway
         <service

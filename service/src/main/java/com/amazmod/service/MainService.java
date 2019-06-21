@@ -31,12 +31,7 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
-//overlay test
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
-import com.amazmod.service.ui.overlay_launcher;
-
+import com.amazmod.service.ui.Overlay_launcher;
 import com.amazmod.service.db.model.BatteryDbEntity;
 import com.amazmod.service.db.model.BatteryDbEntity_Table;
 import com.amazmod.service.events.HardwareButtonEvent;
@@ -207,7 +202,7 @@ public class MainService extends Service implements Transporter.DataListener {
         batteryFilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
 
         //Start overlay button
-        Intent svc = new Intent(this, overlay_launcher.class);
+        Intent svc = new Intent(this, Overlay_launcher.class);
         startService(svc);
         finish();
         Logger.debug("MainService onCreate overlay button");

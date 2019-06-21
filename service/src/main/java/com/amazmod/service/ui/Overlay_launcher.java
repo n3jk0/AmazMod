@@ -17,7 +17,7 @@ import com.amazmod.service.springboard.LauncherWearGridActivity;
 import com.amazmod.service.util.DeviceUtil;
 
 
-public class overlay_launcher extends Service implements OnClickListener {
+public class Overlay_launcher extends Service implements OnClickListener {
 
     private View bottomRightView;
 
