@@ -14,6 +14,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 import com.amazmod.service.springboard.LauncherWearGridActivity;
+import com.amazmod.service.util.DeviceUtil;
 
 
 public class overlay_launcher extends Service implements OnClickListener {
@@ -35,13 +36,17 @@ public class overlay_launcher extends Service implements OnClickListener {
         wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
 
         overlayedButton = new Button(this);
-        overlayedButton.setText("                                 ");
-        overlayedButton.setBackgroundColor(0x55fe4444);
+        overlayedButton.setText("                                            ");
+        overlayedButton.setBackgroundColor(0x00fe4444);
         overlayedButton.setOnClickListener(this);
 
         WindowManager.LayoutParams params = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.TYPE_SYSTEM_ALERT, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL, PixelFormat.TRANSLUCENT);
         params.gravity = Gravity.RIGHT | Gravity.BOTTOM;
-        params.height = 20;
+        if (DeviceUtil.isVerge()) {
+            params.height = 35;
+        }
+        else
+            params.height = 20;
         params.x = 0;
         params.y = 0;
         wm.addView(overlayedButton, params);

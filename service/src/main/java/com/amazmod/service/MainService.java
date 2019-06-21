@@ -127,6 +127,7 @@ import amazmod.com.transport.data.WatchfaceData;
 import amazmod.com.transport.data.WidgetsData;
 
 import static com.amazmod.service.util.FileDataFactory.drawableToBitmap;
+import static com.huami.watch.companion.initial.InitialState.BindingState.finish;
 import static java.lang.System.currentTimeMillis;
 
 /**
@@ -204,6 +205,12 @@ public class MainService extends Service implements Transporter.DataListener {
         EventBus.getDefault().register(this);
 
         batteryFilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+
+        //Start overlay button
+        Intent svc = new Intent(this, overlay_launcher.class);
+        startService(svc);
+        finish();
+        Logger.debug("MainService onCreate overlay button");
 
         // Check if is SuperUser
         File su = new File("/system/xbin/su");
