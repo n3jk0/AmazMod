@@ -16,6 +16,8 @@ import android.widget.Button;
 import com.amazmod.service.springboard.LauncherWearGridActivity;
 import com.amazmod.service.util.DeviceUtil;
 
+import org.tinylog.Logger;
+
 
 public class Overlay_launcher extends Service implements OnClickListener {
 
@@ -81,6 +83,7 @@ public class Overlay_launcher extends Service implements OnClickListener {
                 Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
         intent.putExtra(LauncherWearGridActivity.MODE, LauncherWearGridActivity.NOTIFICATIONS);
         this.startActivity(intent);
+        Logger.debug ("Amazmod overlay button click");
     }
 }
 

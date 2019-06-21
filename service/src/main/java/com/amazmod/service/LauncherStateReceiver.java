@@ -19,7 +19,7 @@ public class LauncherStateReceiver extends BroadcastReceiver {
 
     public void onReceive(Context context, Intent intent) {
         if (intent != null) {
-            Logger.debug("LauncherStateReceiver", "LauncherStateReceiver action : " + intent.getAction());
+            Logger.debug("AmazMod LauncherStateReceiver", "LauncherStateReceiver action : " + intent.getAction());
             if (TextUtils.equals("com.huami.watch.POWER_KEY_WAKE_UP", intent.getAction())) {
                 if (this.mCallback != null) {
                     this.mCallback.onPowerKeyPress();
@@ -30,7 +30,7 @@ public class LauncherStateReceiver extends BroadcastReceiver {
                 this.mInDeepAmbient = true;
             } else if (TextUtils.equals(intent.getAction(), "com.huai.watch.launcher.action.WatchFace")) {
                 this.mInWatchFace = intent.getBooleanExtra("com.huai.watch.launcher.action.WatchFace", true);
-                Logger.debug("LauncherStateReceiver", "action inWatchFace : " + this.mInWatchFace);
+                Logger.debug("AmazMod LauncherStateReceiver", "action inWatchFace : " + this.mInWatchFace);
             }
         }
     }
@@ -39,7 +39,7 @@ public class LauncherStateReceiver extends BroadcastReceiver {
     }
 
     public boolean inWatchFace() {
-        Logger.debug("LauncherStateReceiver", "LauncherStateReceiver action inWatchFace : " + this.mInWatchFace);
+        Logger.debug("Amazmod LauncherStateReceiver", "LauncherStateReceiver action inWatchFace : " + this.mInWatchFace);
         return this.mInWatchFace;
     }
 
