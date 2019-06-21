@@ -237,7 +237,7 @@ public class NotificationFragment extends Fragment implements DelayedConfirmatio
             time.setTextColor(getResources().getColor(R.color.black));
             title.setTextColor(getResources().getColor(R.color.black));
             text.setTextColor(getResources().getColor(R.color.black));
-            iconBadge.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.white)));
+
             delayedConfirmationViewTitle.setTextColor(getResources().getColor(R.color.black));
             delayedConfirmationViewBottom.setTextColor(getResources().getColor(R.color.black));
         }

@@ -143,7 +143,7 @@ public class AmazModLauncher extends AbstractPlugin {
         return this.view;
     }
 
-    private void init() {
+    public void init() {
 
         Logger.debug("AmazModLauncher init");
 
