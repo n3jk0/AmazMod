@@ -83,7 +83,7 @@ public class Overlay_launcher extends Service implements OnClickListener {
                 Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
         intent.putExtra(LauncherWearGridActivity.MODE, LauncherWearGridActivity.NOTIFICATIONS);
         this.startActivity(intent);
-        Logger.debug ("Amazmod overlay button click");
+        Logger.debug ("AmazMod overlay button click");
     }
 }
 

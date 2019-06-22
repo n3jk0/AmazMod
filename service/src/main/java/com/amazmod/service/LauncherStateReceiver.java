@@ -3,7 +3,10 @@ package com.amazmod.service;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.text.TextUtils;
+
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import org.tinylog.Logger;
 
@@ -35,12 +38,35 @@ public class LauncherStateReceiver extends BroadcastReceiver {
         }
     }
     public boolean inDeepAmbient() {
+
         return this.mInDeepAmbient;
     }
 
     public boolean inWatchFace() {
         Logger.debug("Amazmod LauncherStateReceiver", "LauncherStateReceiver action inWatchFace : " + this.mInWatchFace);
         return this.mInWatchFace;
+    }
+
+    public void register(Context context) {
+        this.mContext = context;
+        IntentFilter localIntentFilter = new IntentFilter("android.intent.action.SCREEN_ON");
+        localIntentFilter.addAction("com.google.android.wearable.action.DEEP_AMBIENT_STARTED");
+        localIntentFilter.addAction("com.huai.watch.launcher.action.WatchFace");
+        localIntentFilter.addAction("com.huami.watch.POWER_KEY_WAKE_UP");
+        localIntentFilter.addAction("android.intent.action.SCREEN_OFF");
+        LocalBroadcastManager.getInstance(this.mContext).registerReceiver(this, localIntentFilter);
+        this.mContext.registerReceiver(this, localIntentFilter);
+    }
+
+    public void register(Context context, PowerKeyCallback callback) {
+        register(context);
+        this.mCallback = callback;
+    }
+
+    public void unregister() {
+        LocalBroadcastManager.getInstance(this.mContext).unregisterReceiver(this);
+        this.mCallback = null;
+        this.mContext.unregisterReceiver(this);
     }
 
 }
