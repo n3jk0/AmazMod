@@ -205,16 +205,9 @@ public class MainService extends Service implements Transporter.DataListener {
 
         batteryFilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
 
-        //Monitor if on home page
-        Intent homeCheck = new Intent(this, LauncherStateReceiver.class);
-        startService(homeCheck);
-        finish();
-        Logger.debug("MainService onCreate monitor if home page");
-
-        //Start overlay button
+        // Start overlay button
         Intent overlayButton = new Intent(this, Overlay_launcher.class);
         startService(overlayButton);
-        finish();
         Logger.debug("MainService onCreate overlay button");
 
         // Check if is SuperUser
