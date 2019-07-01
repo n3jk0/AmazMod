@@ -59,14 +59,16 @@ public class DeviceUtil {
                 }
             }
         } catch (NullPointerException e) {
-            Logger.error("iDeviceLocked exception: " + e.toString());
+            Logger.error(e, "iDeviceLocked exception: {}",  e.getMessage());
             isLocked = false;
         }
 
         return isLocked;
     }
 
-    public static boolean isDNDActive(Context context, ContentResolver cr) {
+    public static boolean isDNDActive(Context context) {
+
+        ContentResolver cr = context.getContentResolver();
 
         boolean dndEnabled;
         try {
