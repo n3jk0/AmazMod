@@ -6,6 +6,7 @@ import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.edotassi.amazmod.R;
+import com.edotassi.amazmod.ui.Dialog.AddContactDialog;
 
 import org.tinylog.Logger;
 
@@ -36,7 +37,11 @@ public class ContactsActivity extends AppCompatActivity {
 
     @OnClick(R.id.activity_contacts_add)
     protected void addContact() {
+        AddContactDialog addContactDialog = new AddContactDialog();
+        addContactDialog.show(getSupportFragmentManager(), "add_contact_dialog");
 
+        Contact contact = addContactDialog.getSavedContact();
+        Logger.info(contact);
     }
 
 }
