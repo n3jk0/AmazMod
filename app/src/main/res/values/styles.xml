@@ -38,6 +38,7 @@
     </style>
 
     <style name="AppThemeDark.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+
     <style name="AppThemeDark.PopupOverlay" parent="ThemeOverlay.MaterialComponents" />
 
     <style name="SplashTheme" parent="AppTheme">
@@ -45,11 +46,15 @@
     </style>
 
     <style name="AlertDialogStyleLight" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
-        <item name="android:buttonBarButtonStyle">@style/Widget.MaterialComponents.Button.TextButton</item>
+        <item name="android:buttonBarButtonStyle">
+            @style/Widget.MaterialComponents.Button.TextButton
+        </item>
     </style>
 
     <style name="AlertDialogStyleDark" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
-        <item name="android:buttonBarButtonStyle">@style/Widget.MaterialComponents.Button.TextButton</item>
+        <item name="android:buttonBarButtonStyle">
+            @style/Widget.MaterialComponents.Button.TextButton
+        </item>
         <item name="colorAccent">@color/colorPrimaryDark</item>
         <item name="android:textColorHighlight">@color/text_light_opaque</item>
         <item name="android:colorBackground">@color/background</item>
@@ -124,8 +129,7 @@
         <item name="android:buttonBarButtonStyle">@style/FileChooserButtonStyle_Light</item>
     </style>
 
-    <style name="FileChooserTitleStyle_Light" parent="FileChooserTitleStyle">
-    </style>
+    <style name="FileChooserTitleStyle_Light" parent="FileChooserTitleStyle"></style>
 
     <style name="FileChooserButtonStyle_Light" parent="FileChooserButtonStyle">
         <item name="android:textColor">@color/colorAccent</item>
@@ -147,8 +151,7 @@
         <item name="android:textColor">@color/background_dark</item>
     </style>
 
-    <style name="FileChooserPathViewStyle_Light" parent="FileChooserPathViewStyle">
-    </style>
+    <style name="FileChooserPathViewStyle_Light" parent="FileChooserPathViewStyle"></style>
 
     <style name="FileChooserNewFolderStyle_Light" parent="FileChooserNewFolderStyle">
         <item name="fileChooserNewFolderTextColor">@color/background_dark_dark</item>

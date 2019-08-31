@@ -354,6 +354,14 @@
                 android:targetClass="com.edotassi.amazmod.ui.MainIntroActivity"
                 android:targetPackage="com.edotassi.amazmod" />
         </Preference>
+        <Preference
+            android:summary="@string/pref_contacts_summary"
+            android:title="@string/pref_contacts">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetClass="com.edotassi.amazmod.ui.ContactsActivity"
+                android:targetPackage="com.edotassi.amazmod" />
+        </Preference>
     </PreferenceCategory>
 
     <!--
